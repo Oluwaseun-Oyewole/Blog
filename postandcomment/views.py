@@ -3,6 +3,9 @@ from .models import Post, Comment
 
 
 def home(request):
-    post = Post.objects.all()
-    return render(request, 'postandcomment/home.html', {'post': post})
+    posts = Post.objects.all()
+    return render(request, 'postandcomment/home.html', {'posts': posts})
 
+
+def about(request):
+    return render(request, 'postandcomment/about.html')
