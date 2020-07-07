@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Post, Comment
+from .models import Post
 from django.views.generic import (
     ListView, DetailView, CreateView, UpdateView,
     DeleteView)
@@ -58,6 +58,10 @@ class DeletePageView(LoginRequiredMixin,
         else:
             return False
 
+class LatestPost(ListView):
+    model = Post
+    context_object_name = 'posts'
+    ordering = ['-date_created']
 
 def about(request):
     return render(request, 'postandcomment/about.html')

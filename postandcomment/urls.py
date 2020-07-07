@@ -11,5 +11,6 @@ urlpatterns = [
     path('post/<int:pk>/update/', user_views.UpdatePageView.as_view(), name='update'),
     path('post/<int:pk>/delete/', user_views.DeletePageView.as_view(), name='delete'),
     path('about/', user_views.about, name='about'),
+    path('latest/', user_views.LatestPost.as_view(), name='latest'),
 
 ]
